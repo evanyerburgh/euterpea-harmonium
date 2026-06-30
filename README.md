@@ -1,6 +1,9 @@
 # Euterpea Studio Harmonium
 
-A sampled harmonium instrument for [Decent Sampler](https://www.decentsamples.com/product/decent-sampler-plugin/), built from recordings of a harmonium.
+A sampled harmonium instrument for [Decent Sampler](https://www.decentsamples.com/product/decent-sampler-plugin/), built from recordings of a harmonium sampled at the Euterpea Studio at Yale University's Department of Computer Science.
+
+<img width="815" height="402" alt="Screenshot 2569-06-30 at 9 22 22 PM" src="https://github.com/user-attachments/assets/dabdd506-6f49-4973-80a6-bfb55b278a56" />
+
 
 ## Requirements
 
