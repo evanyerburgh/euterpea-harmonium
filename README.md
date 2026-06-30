@@ -28,7 +28,7 @@ Three independently toggleable drone stops — C#2, D#2, and G# — sustain a co
 ### Tone Knob
 A low-pass filter sweeps from warm and muffled (0) to bright and open (1). Default is set to a natural, balanced tone. Also mappable via MIDI CC74.
 
-### Reed Warmth Knob
+### Wobble
 Controls the depth of a subtle chorus effect, simulating the slight pitch beating and shimmer of multiple reeds vibrating together.
 
 ### Reverb Knob
