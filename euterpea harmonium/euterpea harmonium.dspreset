@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecentSampler minVersion="1.12.13">
+
+  <ui width="812" height="375" bgImage="Samples/Background.png" bgColor="FFFFFFFF">
+    <tab name="main">
+      <!-- Animation for C# drone button -->
+      <multiFrameImage x="615" y="67" width="32" height="20"
+                       path="Samples/toggle.png" 
+                       numFrames="4"
+                       sourceFormat="vertical_image_strip"
+                       frameRate="24"
+                       playbackMode="stopped"/>
+                       
+      <!-- Animation for D# drone button -->
+      <multiFrameImage x="615" y="43" width="32" height="20"
+                       path="Samples/toggle.png" 
+                       numFrames="4"
+                       sourceFormat="vertical_image_strip"
+                       frameRate="24" 
+                       playbackMode="stopped"/>
+                       
+      <!-- Animation for G# drone button -->
+      <multiFrameImage x="615" y="21" width="32" height="20"
+                       path="Samples/toggle.png" 
+                       numFrames="4"
+                       sourceFormat="vertical_image_strip"
+                       frameRate="24" 
+                       playbackMode="stopped"/>
+      <!-- Text -->
+      <label x="170" y="25" width="450" height="30" text="EUTERPEA STUDIO HARMONIUM" textSize="36" textColor="FF681F1F" hAlign="center" visible="false"/>
+      <label x="100" y="5" width="150" height="30" text="Drones" textSize="18" textColor="FF000000" visible="false"/>
+      
+      <!-- C# Drone Button -->
+      <button x="615" y="67" width="32" height="20"   style="image" value="0">
+        <state name="Off" mainImage="">
+          <!-- Stop the C# drone sequence when button is off -->
+          <binding level="instrument" type="note_sequence" seqIndex="0" 
+                   seqTriggerBehavior="off" seqPlayerIdentifier="csharp_drone"/>
+          <!-- Set animation to last frame (frame 0) when button is turned off -->
+          <binding type="control" level="ui" position="0" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation in reverse once when button is off -->
+          <binding type="control" level="ui" position="0" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="reverse_once"/>
+        </state>
+        <state name="On" mainImage="">
+          <!-- Play the C# drone sequence when button is on -->
+          <binding level="instrument" type="note_sequence" seqIndex="0" 
+                   seqLoopMode="forward" seqTriggerBehavior="on"
+                   seqPlayerIdentifier="csharp_drone"/>
+          <!-- Set animation to first frame when turning on -->
+          <binding type="control" level="ui" position="0" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation once in forward direction when button is turned on -->
+          <binding type="control" level="ui" position="0" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="forward_once"/>
+        </state>
+      </button>
+      
+      <!-- D# Drone Button - Updated to match C# drone button -->
+      <button x="615" y="43" width="32" height="20"   style="image" value="0">
+        <state name="Off" mainImage="">
+          <!-- Stop the D# drone sequence when button is off -->
+          <binding level="instrument" type="note_sequence" seqIndex="1" 
+                   seqTriggerBehavior="off" seqPlayerIdentifier="dsharp_drone"/>
+          <!-- Set animation to last frame (frame 0) when button is turned off -->
+          <binding type="control" level="ui" position="1" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation in reverse once when button is off -->
+          <binding type="control" level="ui" position="1" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="reverse_once"/>
+        </state>
+        <state name="On" mainImage="">
+          <!-- Play the D# drone sequence when button is on -->
+          <binding level="instrument" type="note_sequence" seqIndex="1" 
+                   seqLoopMode="forward" seqTriggerBehavior="on" seqPlaybackRate="1" 
+                   seqTrackMidiInputVelocity="1.0" seqPlayerIdentifier="dsharp_drone"/>
+          <!-- Set animation to first frame when turning on -->
+          <binding type="control" level="ui" position="1" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation once in forward direction when button is turned on -->
+          <binding type="control" level="ui" position="1" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="forward_once"/>
+        </state>
+      </button>
+      
+      <!-- G# Drone Button - Updated to match C# drone button -->
+      <button x="615" y="21" width="32" height="20"   style="image" value="0">
+        <state name="Off" mainImage="">
+          <!-- Stop the G# drone sequence when button is off -->
+          <binding level="instrument" type="note_sequence" seqIndex="2" 
+                   seqTriggerBehavior="off" seqPlayerIdentifier="gsharp_drone"/>
+          <!-- Set animation to last frame (frame 0) when button is turned off -->
+          <binding type="control" level="ui" position="2" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation in reverse once when button is off -->
+          <binding type="control" level="ui" position="2" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="reverse_once"/>
+        </state>
+        <state name="On" mainImage="">
+          <!-- Play the G# drone sequence when button is on -->
+          <binding level="instrument" type="note_sequence" seqIndex="2" 
+                   seqLoopMode="forward" seqTriggerBehavior="on" seqPlaybackRate="1" 
+                   seqTrackMidiInputVelocity="1.0" seqPlayerIdentifier="gsharp_drone"/>
+          <!-- Set animation to first frame when turning on -->
+          <binding type="control" level="ui" position="2" 
+                   parameter="CURRENT_FRAME" 
+                   translation="fixed_value" 
+                   translationValue="0"/>
+          <!-- Play the animation once in forward direction when button is turned on -->
+          <binding type="control" level="ui" position="2" 
+                   parameter="PLAYBACK_MODE" 
+                   translation="fixed_value" 
+                   translationValue="forward_once"/>
+        </state>
+      </button>
+      
+      <!-- Drone Volume -->
+      <label x="630" y="170" width="70" height="40" text="" textSize="16" textColor="FF000000" hAlign="center"/>
+      <control x="615" y="108" width="16" height="70" parameterName="DroneVolume" type="float" minValue="0.0" maxValue="1.5" value="1.0"
+              style="custom_skin_vertical_drag"
+              customSkinImage="Samples/slider.png"
+              customSkinNumFrames="15"
+              customSkinImageOrientation="vertical"
+              mouseDragSensitivity="100"> 
+        <!-- Direct binding to the tag volume -->
+        <binding type="amp" level="tag" identifier="sequence_drones" parameter="TAG_VOLUME" />
+      </control>
+      
+      <!-- Main Controls -->
+      <!-- Row 1: Tone, Reed Warmth -->
+      <label x="663" y="55" width="70" height="20" text="" textSize="16" textColor="FF000000" hAlign="center"/>
+      <control x="670" y="3" width="70" height="70" parameterName="Tone" type="float" minValue="0" maxValue="1" value="0.7"
+              style="custom_skin_vertical_drag" 
+              customSkinImage="Samples/knob-1.png" 
+              customSkinNumFrames="15" 
+              customSkinImageOrientation="vertical">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"
+                translation="table" 
+                translationTable="0,150;0.3,450;0.5,1200;0.7,4500;0.9,12000;1.0001,22000"/>
+      </control>
+
+      <label x="723" y="55" width="70" height="20" text="" textSize="16" textColor="FF000000" hAlign="center"/>
+      <control x="730" y="3" width="70" height="70" parameterName="ReedWarmth" type="float" minValue="0" maxValue="1" value="0.25"
+              style="custom_skin_vertical_drag" 
+              customSkinImage="Samples/knob-1.png" 
+              customSkinNumFrames="15" 
+              customSkinImageOrientation="vertical">
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX" />
+        <!-- Chorus mod depth is 0..1; sweep it subtly with the knob for "warmth" -->
+        <binding type="effect" level="instrument" position="1" parameter="FX_MOD_DEPTH"
+                translation="linear" translationOutputMin="0.1" translationOutputMax="0.5"/>
+      </control>
+
+      <!-- Row 2: Room Size, Reverb Mix -->
+      <label x="663" y="115" width="70" height="20" text="" textSize="16" textColor="FF000000" hAlign="center"/>
+      <control x="670" y="63" width="70" height="70" parameterName="RoomSize" type="float" minValue="0" maxValue="1" value="0.5"
+              style="custom_skin_vertical_drag" 
+              customSkinImage="Samples/knob-2.png" 
+              customSkinNumFrames="15" 
+              customSkinImageOrientation="vertical">
+        <binding type="effect" level="instrument" position="2" parameter="FX_REVERB_ROOM_SIZE" />
+      </control>
+
+      <label x="723" y="115" width="70" height="20" text="" textSize="16" textColor="FF000000" hAlign="center"/>
+      <control x="730" y="63" width="70" height="70" parameterName="ReverbMix" type="float" minValue="0" maxValue="1" value="0.3"
+              style="custom_skin_vertical_drag" 
+              customSkinImage="Samples/knob-2.png" 
+              customSkinNumFrames="15" 
+              customSkinImageOrientation="vertical">
+        <binding type="effect" level="instrument" position="2" parameter="FX_REVERB_WET_LEVEL" />
+      </control>
+
+      <!-- ================= Octave Coupler (sub-octave) ================= -->
+      <multiFrameImage x="720" y="160" width="32" height="20"
+                       path="Samples/toggle.png"
+                       numFrames="4"
+                       sourceFormat="vertical_image_strip"
+                       frameRate="24"
+                       playbackMode="stopped"/>
+
+      <!-- Coupler toggle button - raises/lowers the "coupler" tag volume.       -->
+      <button x="720" y="160" width="32" height="20" style="image" value="0">
+        <state name="Off" mainImage="">
+          <!-- Mute the coupler group -->
+          <binding type="amp" level="tag" identifier="coupler" parameter="TAG_VOLUME"
+                   translation="fixed_value" translationValue="0.0"/>
+          <!-- Reset animation to first frame, then play in reverse -->
+          <binding type="control" level="ui" position="18"
+                   parameter="CURRENT_FRAME"
+                   translation="fixed_value" translationValue="0"/>
+          <binding type="control" level="ui" position="18"
+                   parameter="PLAYBACK_MODE"
+                   translation="fixed_value" translationValue="reverse_once"/>
+        </state>
+        <state name="On" mainImage="">
+          <!-- Bring the coupler group up to playing level -->
+          <binding type="amp" level="tag" identifier="coupler" parameter="TAG_VOLUME"
+                   translation="fixed_value" translationValue="0.9"/>
+          <!-- Reset animation to first frame, then play forward -->
+          <binding type="control" level="ui" position="18"
+                   parameter="CURRENT_FRAME"
+                   translation="fixed_value" translationValue="0"/>
+          <binding type="control" level="ui" position="18"
+                   parameter="PLAYBACK_MODE"
+                   translation="fixed_value" translationValue="forward_once"/>
+        </state>
+      </button>
+    </tab>
+    
+    <keyboard>
+      <color loNote="0" hiNote="23" color="#A9A9A9" />
+      <color loNote="24" hiNote="65" color="FFFFFFFF" />
+      <color loNote="66" hiNote="127" color="#A9A9A9" />
+    </keyboard>
+  </ui>
+  
+  <!-- Define the note sequences for the drones -->
+  <noteSequences>
+    <!-- C# Drone Sequence - Extended to 20 seconds (40 beats at 120 BPM) -->
+    <sequence name="C#2Drone" length="40.0" rate="1">
+    <!-- Use note 125 to avoid conflicts with keyboard notes -->
+      <note position="0" velocity="1" note="125" length="40"/>
+    </sequence>
+    
+    <!-- D# Drone Sequence - Extended to 20 seconds (40 beats at 120 BPM) -->
+    <sequence name="D#2Drone" length="40.0" rate="1">
+      <!-- Use note 126 to avoid conflicts with keyboard notes -->
+      <note position="0" velocity="1" note="126" length="40"/>
+    </sequence>
+    
+    <!-- G# Drone Sequence - Extended to 20 seconds (40 beats at 120 BPM) -->
+    <sequence name="G#2Drone" length="40.0" rate="1">
+      <!-- Use note 127 to avoid conflicts with keyboard notes -->
+      <note position="0" velocity="1" note="127" length="40"/>
+    </sequence>
+  </noteSequences>
+  
+  <groups attack="0.01" sustain="1.0" release="0.5" volume="0dB">
+    <!-- Main Samples Group - using round robins -->
+    <!-- ampVelTrack="0": no velocity dynamics. Loudness comes from the mod -->
+    <!-- wheel (CC1) working the bellows, like a real harmonium.            -->
+    <group ampVelTrack="0">
+      <!-- Group 1: C1-D1 Range (MIDI 24-26) -->
+      <sample loNote="24" hiNote="26" rootNote="24" path="Samples/Harmonium_C1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="24" hiNote="26" rootNote="25" path="Samples/Harmonium_C#1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="24" hiNote="26" rootNote="26" path="Samples/Harmonium_D1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 2: D#1-F1 Range (MIDI 27-29) -->
+      <sample loNote="27" hiNote="29" rootNote="27" path="Samples/Harmonium_D#1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="27" hiNote="29" rootNote="28" path="Samples/Harmonium_E1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="27" hiNote="29" rootNote="29" path="Samples/Harmonium_F1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 3: F#1-G#1 Range (MIDI 30-32) -->
+      <sample loNote="30" hiNote="32" rootNote="30" path="Samples/Harmonium_F#1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="30" hiNote="32" rootNote="31" path="Samples/Harmonium_G1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="30" hiNote="32" rootNote="32" path="Samples/Harmonium_G#1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 4: A1-B1 Range (MIDI 33-35) -->
+      <sample loNote="33" hiNote="35" rootNote="33" path="Samples/Harmonium_A1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="33" hiNote="35" rootNote="34" path="Samples/Harmonium_A#1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="33" hiNote="35" rootNote="35" path="Samples/Harmonium_B1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 5: C2-D2 Range (MIDI 36-38) -->
+      <sample loNote="36" hiNote="38" rootNote="36" path="Samples/Harmonium_C2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="36" hiNote="38" rootNote="37" path="Samples/Harmonium_C#2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="36" hiNote="38" rootNote="38" path="Samples/Harmonium_D2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 6: D#2-F2 Range (MIDI 39-41) -->
+      <sample loNote="39" hiNote="41" rootNote="39" path="Samples/Harmonium_D#2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="39" hiNote="41" rootNote="40" path="Samples/Harmonium_E2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="39" hiNote="41" rootNote="41" path="Samples/Harmonium_F2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 7: F#2-G#2 Range (MIDI 42-44) -->
+      <sample loNote="42" hiNote="44" rootNote="42" path="Samples/Harmonium_F#2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="42" hiNote="44" rootNote="43" path="Samples/Harmonium_G2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="42" hiNote="44" rootNote="44" path="Samples/Harmonium_G#2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 8: A2-B2 Range (MIDI 45-47) -->
+      <sample loNote="45" hiNote="47" rootNote="45" path="Samples/Harmonium_A2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="45" hiNote="47" rootNote="46" path="Samples/Harmonium_A#2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="45" hiNote="47" rootNote="47" path="Samples/Harmonium_B2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 9: C3-D3 Range (MIDI 48-50) -->
+      <sample loNote="48" hiNote="50" rootNote="48" path="Samples/Harmonium_C3.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="48" hiNote="50" rootNote="49" path="Samples/Harmonium_C#3.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="48" hiNote="50" rootNote="50" path="Samples/Harmonium_D3.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 10: D#3-F3 Range (MIDI 51-53) -->
+      <sample loNote="51" hiNote="53" rootNote="51" path="Samples/Harmonium_D#3.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="51" hiNote="53" rootNote="52" path="Samples/Harmonium_E3.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="51" hiNote="53" rootNote="53" path="Samples/Harmonium_F3.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 11: F#3-G#3 Range (MIDI 54-56) -->
+      <sample loNote="54" hiNote="56" rootNote="54" path="Samples/Harmonium_F#3.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="54" hiNote="56" rootNote="55" path="Samples/Harmonium_G3.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="54" hiNote="56" rootNote="56" path="Samples/Harmonium_G#3.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 12: A3-B3 Range (MIDI 57-59) -->
+      <sample loNote="57" hiNote="59" rootNote="57" path="Samples/Harmonium_A3.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="57" hiNote="59" rootNote="58" path="Samples/Harmonium_A#3.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="57" hiNote="59" rootNote="59" path="Samples/Harmonium_B3.wav" seqMode="random" seqLength="3" seqPosition="3" />
+      
+      <!-- Group 13: C4-F4 Range (MIDI 60-65) - top 3 notes (D#4-F4) are       -->
+      <!-- pitch-stretched up from the C4/C#4/D4 samples (no samples above D4). -->
+      <!-- Replace with real D#4/E4/F4 recordings if a cleaner top is needed.   -->
+      <sample loNote="60" hiNote="65" rootNote="60" path="Samples/Harmonium_C4.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="60" hiNote="65" rootNote="61" path="Samples/Harmonium_C#4.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="60" hiNote="65" rootNote="62" path="Samples/Harmonium_D4.wav" seqMode="random" seqLength="3" seqPosition="3" />
+    </group>
+
+    <!-- ====================== Octave Coupler Group ====================== -->
+    <group ampVelTrack="0" tags="coupler">
+      <!-- Keys C2-D2 (36-38) -> sounds C1-D1 -->
+      <sample loNote="36" hiNote="38" rootNote="36" path="Samples/Harmonium_C1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="36" hiNote="38" rootNote="37" path="Samples/Harmonium_C#1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="36" hiNote="38" rootNote="38" path="Samples/Harmonium_D1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys D#2-F2 (39-41) -> sounds D#1-F1 -->
+      <sample loNote="39" hiNote="41" rootNote="39" path="Samples/Harmonium_D#1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="39" hiNote="41" rootNote="40" path="Samples/Harmonium_E1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="39" hiNote="41" rootNote="41" path="Samples/Harmonium_F1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys F#2-G#2 (42-44) -> sounds F#1-G#1 -->
+      <sample loNote="42" hiNote="44" rootNote="42" path="Samples/Harmonium_F#1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="42" hiNote="44" rootNote="43" path="Samples/Harmonium_G1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="42" hiNote="44" rootNote="44" path="Samples/Harmonium_G#1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys A2-B2 (45-47) -> sounds A1-B1 -->
+      <sample loNote="45" hiNote="47" rootNote="45" path="Samples/Harmonium_A1.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="45" hiNote="47" rootNote="46" path="Samples/Harmonium_A#1.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="45" hiNote="47" rootNote="47" path="Samples/Harmonium_B1.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys C3-D3 (48-50) -> sounds C2-D2 -->
+      <sample loNote="48" hiNote="50" rootNote="48" path="Samples/Harmonium_C2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="48" hiNote="50" rootNote="49" path="Samples/Harmonium_C#2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="48" hiNote="50" rootNote="50" path="Samples/Harmonium_D2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys D#3-F3 (51-53) -> sounds D#2-F2 -->
+      <sample loNote="51" hiNote="53" rootNote="51" path="Samples/Harmonium_D#2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="51" hiNote="53" rootNote="52" path="Samples/Harmonium_E2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="51" hiNote="53" rootNote="53" path="Samples/Harmonium_F2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys F#3-G#3 (54-56) -> sounds F#2-G#2 -->
+      <sample loNote="54" hiNote="56" rootNote="54" path="Samples/Harmonium_F#2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="54" hiNote="56" rootNote="55" path="Samples/Harmonium_G2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="54" hiNote="56" rootNote="56" path="Samples/Harmonium_G#2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys A3-B3 (57-59) -> sounds A2-B2 -->
+      <sample loNote="57" hiNote="59" rootNote="57" path="Samples/Harmonium_A2.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="57" hiNote="59" rootNote="58" path="Samples/Harmonium_A#2.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="57" hiNote="59" rootNote="59" path="Samples/Harmonium_B2.wav" seqMode="random" seqLength="3" seqPosition="3" />
+
+      <!-- Keys C4-F4 (60-65) -> sounds C3-F3 (top 3 stretched from C3/C#3/D3) -->
+      <sample loNote="60" hiNote="65" rootNote="60" path="Samples/Harmonium_C3.wav" seqMode="random" seqLength="3" seqPosition="1" />
+      <sample loNote="60" hiNote="65" rootNote="61" path="Samples/Harmonium_C#3.wav" seqMode="random" seqLength="3" seqPosition="2" />
+      <sample loNote="60" hiNote="65" rootNote="62" path="Samples/Harmonium_D3.wav" seqMode="random" seqLength="3" seqPosition="3" />
+    </group>
+
+    <!-- Drone samples group - Using tags to differentiate the drones -->
+    <group attack="1.0" sustain="1.0" release="1.5" volume="0.8" tags="sequence_drones">
+      <!-- Special mapping for sequence-triggered drone samples -->
+      <!-- C# Drone -->
+      <sample rootNote="125" loNote="125" hiNote="125" path="Samples/Harmonium_Drone_C#2.wav" loopEnabled="true" 
+              loopStart="44100" loopEnd="132300" loopCrossfade="22050" />
+              
+      <!-- D# Drone -->
+      <sample rootNote="126" loNote="126" hiNote="126" path="Samples/Harmonium_Drone_D#2.wav" loopEnabled="true" 
+              loopStart="44100" loopEnd="132300" loopCrossfade="22050" />
+              
+      <!-- G# Drone -->
+      <sample rootNote="127" loNote="127" hiNote="127" path="Samples/Harmonium_Drone_G#2.wav" loopEnabled="true"
+              loopStart="44100" loopEnd="132300" loopCrossfade="22050" />
+    </group>
+  </groups>
+  
+  <tags>
+    <!-- Define tag-specific settings to ensure drones behave correctly -->
+    <tag name="sequence_drones" volume="0.8" />
+    <!-- Octave coupler starts off (volume 0); the toggle button raises it -->
+    <tag name="coupler" volume="0.0" />
+  </tags>
+  
+  <effects>
+    <effect type="lowpass" frequency="22000.0" resonance="0.4"/>
+    <effect type="chorus" mix="0.25" modDepth="0.2" modRate="0.15" />
+    <effect type="reverb" wetLevel="0.3" roomSize="0.5" damping="0.4"/>
+  </effects>
+  
+  <midi>
+    <!-- CC 74 (Filter Cutoff) controls Tone - bound directly to the lowpass    -->
+    <!-- filter (effect index 0) using the same curve as the Tone knob, so it    -->
+    <!-- works regardless of UI element ordering. The Tone knob won't visually    -->
+    <!-- track the CC, but the sound responds correctly.                         -->
+    <cc number="74">
+      <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"
+               translation="table"
+               translationTable="0,150;0.3,450;0.5,1200;0.7,4500;0.9,12000;1.0001,22000"/>
+    </cc>
+
+    <!-- CC 1 (mod wheel) = the bellows. Drives overall volume/expression.     -->
+    <!-- Floored at 0.75 (~-2.5 dB) up to unity, so the swing is a gentle        -->
+    <!-- ~2.5 dB - subtle and bellows-like. Lower translationOutputMin for a     -->
+    <!-- wider, more dramatic swell.                                             -->
+    <cc number="1">
+      <binding type="amp" level="instrument" parameter="AMP_VOLUME"
+               translation="linear" translationOutputMin="0.75" translationOutputMax="1.0"/>
+    </cc>
+  </midi>
+</DecentSampler>
