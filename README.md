@@ -2,8 +2,7 @@
 
 A sampled harmonium instrument for [Decent Sampler](https://www.decentsamples.com/product/decent-sampler-plugin/), built from recordings of a harmonium sampled at the Euterpea Studio at Yale University's Department of Computer Science.
 
-<img width="815" height="402" alt="Screenshot 2569-06-30 at 9 22 22 PM" src="https://github.com/user-attachments/assets/dabdd506-6f49-4973-80a6-bfb55b278a56" />
-
+<img width="815" height="402" alt="Screenshot 2569-06-30 at 9 23 24 PM" src="https://github.com/user-attachments/assets/e3b2cdfc-7e8d-464d-ad91-003a83fb1b9e" />
 
 ## Requirements
 
